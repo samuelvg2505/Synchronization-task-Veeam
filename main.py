@@ -39,12 +39,13 @@ def main():
     src = sys.argv[1]
     replica = sys.argv[2]
     sync_period = float(sys.argv[3])
+    log_file_path = sys.argv[4]
 
     starttime = time.monotonic()
 
     logger = logging.getLogger(__name__)
     #file logger
-    logging.basicConfig(filename='sync.log', encoding='utf-8', format="{asctime}: [{levelname}] {message}", style="{", datefmt="%Y-%m-%d %H:%M", level=logging.INFO) 
+    logging.basicConfig(filename=log_file_path, encoding='utf-8', format="{asctime}: [{levelname}] {message}", style="{", datefmt="%Y-%m-%d %H:%M", level=logging.INFO) 
 
     #console logger
     console_handler = logging.StreamHandler()
